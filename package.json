@@ -1,0 +1,26 @@
+{
+  "name": "chat_socket_mongodb",
+  "version": "1.0.0",
+  "description": "Labtest1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatihkgm/Chat_Socket_MongoDB.git"
+  },
+  "author": "Fatih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatihkgm/Chat_Socket_MongoDB/issues"
+  },
+  "homepage": "https://github.com/fatihkgm/Chat_Socket_MongoDB#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15",
+    "nodemon": "^2.0.7",
+    "socket.io": "^3.1.1"
+  }
+}
