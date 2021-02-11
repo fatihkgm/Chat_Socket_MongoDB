@@ -25,7 +25,7 @@ mongoose.connect(dbUrl , { useUnifiedTopology: true, useNewUrlParser: true }, (e
 
 var Message = mongoose.model('Message',{
   name : String,
-  message : String
+  message : String,
 });
 
 app.get('/messages', (req, res) => {
