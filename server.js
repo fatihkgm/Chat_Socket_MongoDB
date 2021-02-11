@@ -28,6 +28,11 @@ var Message = mongoose.model('Message',{
   message : String,
 });
 
+app.get("/", function(req, res) {
+  res.sendFile(__dirname + "/room.html");
+});
+
+
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
     res.send(messages);
