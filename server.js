@@ -55,5 +55,5 @@ mongoose.connect(dbUrl , { useUnifiedTopology: true, useNewUrlParser: true }, (e
 })
 
 var server = http.listen(3001, () => {
-  console.log('server is running on port', server.address().port);
+  console.log('http://localhost:', server.address().port);
 });
