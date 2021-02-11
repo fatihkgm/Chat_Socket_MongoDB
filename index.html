@@ -29,7 +29,13 @@
    socket.on("connect", () => {
         console.log(socket.id); 
     });
+
     
+    socket.on("disconnect", () => {
+        console.log("User disconnected"); 
+    });
+    
+
     $(() => {
         $("#send").click(()=>{
             sendMessage({name: $("#name").val(), message: $("#message").val()});

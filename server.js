@@ -11,12 +11,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
 
 //Declare MongoDB Schemas
-var Message = mongoose.model('Message',{
-    name : String,
-    message : String
-  })
 
-var dbUrl = 'mongodb+srv://sa:rrfYrY3mSzHSgzJR@cluster0.qa3t4.mongodb.net/gbc-fall2020?retryWrites=true&w=majority'
+
+var dbUrl = 'mongodb+srv://fatih:admin@gbc-learning.v1sqe.mongodb.net/thekgmweb?retryWrites=true&w=majority'
+
+mongoose.connect(dbUrl , { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
+  if (err) {
+      console.log('mongodb connected',err);
+  }else{
+      console.log('Successfully mongodb connected');
+  }
+});
+
+var Message = mongoose.model('Message',{
+  name : String,
+  message : String
+});
 
 app.get('/messages', (req, res) => {
   Message.find({},(err, messages)=> {
@@ -46,13 +56,7 @@ io.on('connection', (socket) => {
   //console.log(socket.rooms);
 })
 
-mongoose.connect(dbUrl , { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
-    if (err) {
-        console.log('mongodb connected',err);
-    }else{
-        console.log('Successfully mongodb connected');
-    }
-})
+
 
 var server = http.listen(3001, () => {
   console.log('http://localhost:', server.address().port);
