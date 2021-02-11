@@ -48,9 +48,10 @@ app.post('/messages', (req, res) => {
     res.sendStatus(200);
   })
 })
-
+var roomno = 1;
 io.on("connection", socket => {
-  console.log("user connected");
+  io.to('room1').to('room2').to('room3').emit('some event');
+
 
   socket.on("disconnect", function() {
     console.log("user disconnected");
