@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 //Declare MongoDB Schemas
 
 
-var dbUrl = 'mongodb+srv://fatih:admin@gbc-learning.v1sqe.mongodb.net/thekgmweb?retryWrites=true&w=majority'
+var dbUrl = "mongodb+srv://fatih:admin@gbc-learning.v1sqe.mongodb.net/User"
 
 mongoose.connect(dbUrl , { useUnifiedTopology: true, useNewUrlParser: true }, (err) => {
   if (err) {
@@ -59,5 +59,5 @@ io.on('connection', (socket) => {
 
 
 var server = http.listen(3001, () => {
-  console.log('http://localhost:', server.address().port);
+  console.log('http://localhost:3001', server.address().port);
 });
