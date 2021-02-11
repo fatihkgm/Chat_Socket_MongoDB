@@ -80,6 +80,8 @@
     function addMessages(message){
         $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
     }
+  
+    
 
     function getMessages(){
       $.get('http://localhost:3001/messages', (data) => {
@@ -90,6 +92,14 @@
     function sendMessage(message){
       $.post('http://localhost:3001/messages', message)
     }
+
+
+    $('typing').typing(function(){
+      socket.emit("typing", { user: "Someone", message: "is typing..." });
+    })
+
+    
+
 </script>
 </body>
 </html>
