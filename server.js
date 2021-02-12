@@ -28,8 +28,8 @@ var Message = mongoose.model('Message',{
   message : String,
 });
 
-app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.html");
+app.get('/room', (req, res) => {
+  res.sendFile('room.html', { root: __dirname });
 });
 
 
