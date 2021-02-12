@@ -29,7 +29,7 @@ var Message = mongoose.model('Message',{
 });
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/room.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 
